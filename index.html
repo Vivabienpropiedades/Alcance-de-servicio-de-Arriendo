@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIVABIEN PROPIEDADES - Alcance de Servicio de Arriendo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Primary Blue (#225479), Accent Blue (#1a4260, #3a6b9a), Warm Neutral (Amber-500), Base Neutrals (Stone), Accent Yellow (#E3D263) -->
+    <!-- Application Structure Plan: The SPA is designed as a 'Process-Centric Interactive Journey' for leasing services. It features a central, clickable process flow diagram representing the 7 stages of property rental, where administration now includes contract termination. Clicking a stage dynamically updates a detail area, allowing users to explore the services at their own pace. This is engaging and informative. The structure is supported by the team section for credibility and key advantages for value proposition. This architecture transforms procedural information into an interactive, user-controlled experience that builds confidence and clarity. -->
+    <!-- Visualization & Content Choices: 1. Report Info: 7-stage leasing process (administration now includes termination). Goal: Organize/Interact. Viz/Method: Interactive flowchart built with HTML/CSS/JS. Interaction: User clicks a stage to reveal details. Justification: Breaks down complex process into manageable, interactive steps, reflecting the unified administration service. Library: Vanilla JS. 2. Report Info: Detailed services for each stage. Goal: Inform. Viz/Method: Dynamic text block. Interaction: Content updates on click from the flowchart. Justification: Prevents information overload. Library: Vanilla JS. 3. Report Info: Team information. Goal: Build Trust. Viz/Method: Styled profile cards with images and contact info. Interaction: Static display. Justification: Personalizes the service and builds rapport. Library: N/A. 4. Report Info: Key Advantages. Goal: Inform/Persuade. Viz/Method: Styled cards with emotional messaging. Interaction: Minimal hover effect. Justification: Highlights core value propositions clearly and emotionally. Library: N/A. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f4; /* stone-100 as fallback */
+            background-image: url('fondo-inmobiliario.jpg'); /* ASEGÚRATE DE SUBIR ESTE ARCHIVO A GITHUB */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Optional: for parallax-like effect */
+        }
+        .process-step-active {
+            background-color: #1a4260 !important; /* Derived dark blue from #225479 */
+            color: #ffffff !important;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .process-step-active h3 {
+            color: #ffffff !important;
+        }
+    </style>
+</head>
+<body class="text-stone-800">
+
+    <div class="container mx-auto max-w-6xl p-4 sm:p-6 lg:p-8">
+
+        <header class="text-center mb-12 md:mb-16">
+            <img src="logo.jpg" alt="VIVABIEN PROPIEDADES Logo" class="mx-auto mb-4 w-32 h-auto rounded-full shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/128x128/d6d3d1/78716c?text=Logo';">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#E3D263] mb-2">VIVABIEN PROPIEDADES</h1>
+            <p class="text-lg md:text-xl text-white">Gestión Profesional de Arriendos: Encontramos arrendatarios cualificados para su tranquilidad y rentabilidad.</p>
+        </header>
+
+        <main>
+            <section id="team" class="mb-16 md:mb-24">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold text-[#E3D263] mb-2">Conozca a Nuestro Equipo de Expertos en Arriendos</h2>
+                    <p class="text-white max-w-3xl mx-auto">La confianza lo es todo. Nuestro equipo de 4 expertos dedicados está listo para hacer de su gestión de arriendo una experiencia exitosa y sin preocupaciones.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Miembro 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center flex flex-col items-center">
+                        <img src="camila-vega.jpg" alt="Foto Camila Vega David" class="w-36 h-36 rounded-full object-cover mb-4 border-4 border-[#225479]" onerror="this.onerror=null;this.src='https://placehold.co/150x150/e0e0e0/ffffff?text=Camila+V';">
+                        <h3 class="text-xl font-bold text-[#225479] mb-2">Camila Vega David</h3>
+                        <p class="text-stone-700 text-sm mb-1">Agente Inmobiliario</p>
+                        <p class="text-stone-700 text-sm mb-1">📞 +56989424104</p>
+                        <p class="text-stone-700 text-sm">📧 camila.vega@vivabien.cl</p>
+                    </div>
+                    <!-- Miembro 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center flex flex-col items-center">
+                        <img src="catherine-masaur.jpg" alt="Foto Catherine Masaur Alarcón" class="w-36 h-36 rounded-full object-cover mb-4 border-4 border-[#225479]" onerror="this.onerror=null;this.src='https://placehold.co/150x150/e0e0e0/ffffff?text=Catherine+M';">
+                        <h3 class="text-xl font-bold text-[#225479] mb-2">Catherine Masaur Alarcón</h3>
+                        <p class="text-stone-700 text-sm mb-1">Agente Inmobiliario</p>
+                        <p class="text-stone-700 text-sm mb-1">📞 +56999450842</p>
+                        <p class="text-stone-700 text-sm">📧 catherine.masaur@vivabien.cl</p>
+                    </div>
+                    <!-- Miembro 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center flex flex-col items-center">
+                        <img src="leonel-abarca.jpg" alt="Foto Leonel Abarca Tapia" class="w-36 h-36 rounded-full object-cover mb-4 border-4 border-[#225479]" onerror="this.onerror=null;this.src='https://placehold.co/150x150/e0e0e0/ffffff?text=Leonel+A';">
+                        <h3 class="text-xl font-bold text-[#225479] mb-2">Leonel Abarca Tapia</h3>
+                        <p class="text-stone-700 text-sm mb-1">Agente Inmobiliario</p>
+                        <p class="text-stone-700 text-sm mb-1">📞 +56926223573</p>
+                        <p class="text-stone-700 text-sm">📧 leoabarca@vivabien.cl</p>
+                    </div>
+                    <!-- Miembro 4 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center flex flex-col items-center">
+                        <img src="sergio-aguilar.jpg" alt="Foto Sergio Aguilar Suárez" class="w-36 h-36 rounded-full object-cover mb-4 border-4 border-[#225479]" onerror="this.onerror=null;this.src='https://placehold.co/150x150/e0e0e0/ffffff?text=Sergio+A';">
+                        <h3 class="text-xl font-bold text-[#225479] mb-2">Sergio Aguilar Suárez</h3>
+                        <p class="text-stone-700 text-sm mb-1">Agente Inmobiliario</p>
+                        <p class="text-stone-700 text-sm mb-1">📞 +56978029454</p>
+                        <p class="text-stone-700 text-sm">📧 sergio.aguilar@vivabien.cl</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="interactive-process" class="mb-16 md:mb-24">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold text-[#E3D263] mb-2">Su Proceso de Arriendo, Paso a Paso hacia la Tranquilidad</h2>
+                    <p class="text-white max-w-3xl mx-auto">Asegure un arrendamiento sin preocupaciones. Cada etapa de nuestro proceso está meticulosamente diseñada para su total tranquilidad. Descubra cómo lo logramos.</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 mb-8">
+                    <div id="step-1" class="process-step text-center p-4 bg-white rounded-xl shadow-md cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border-b-4 border-[#3a6b9a]">
+                        <div class="text-4xl mb-2">1</div>
+                        <h3 class="font-bold text-stone-700">Asesoría Inicial</h3>
+                    </div>
+                    <div id="step-2" class="process-step text-center p-4 bg-white rounded-xl shadow-md cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border-b-4 border-[#3a6b9a]">
+                        <div class="text-4xl mb-2">2</div>
+                        <h3 class="font-bold text-stone-700">Promoción</h3>
+                    </div>
+                    <div id="step-3" class="process-step text-center p-4 bg-white rounded-xl shadow-md cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border-b-4 border-[#3a6b9a]">
+                        <div class="text-4xl mb-2">3</div>
+                        <h3 class="font-bold text-stone-700">Gestión de Visitas</h3>
+                    </div>
+                    <div id="step-4" class="process-step text-center p-4 bg-white rounded-xl shadow-md cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border-b-4 border-[#3a6b9a]">
+                        <div class="text-4xl mb-2">4</div>
+                        <h3 class="font-bold text-stone-700">Evaluación</h3>
+                    </div>
+                    <div id="step-5" class="process-step text-center p-4 bg-white rounded-xl shadow-md cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border-b-4 border-[#3a6b9a]">
+                        <div class="text-4xl mb-2">5</div>
+                        <h3 class="font-bold text-stone-700">Contrato</h3>
+                    </div>
+                    <div id="step-6" class="process-step text-center p-4 bg-white rounded-xl shadow-md cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border-b-4 border-[#3a6b9a]">
+                        <div class="text-4xl mb-2">6</div>
+                        <h3 class="font-bold text-stone-700">Entrega</h3>
+                    </div>
+                    <div id="step-7" class="process-step text-center p-4 bg-white rounded-xl shadow-md cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border-b-4 border-[#3a6b9a]">
+                        <div class="text-4xl mb-2">7</div>
+                        <h3 class="font-bold text-stone-700">Servicio de Administración (Opcional)</h3>
+                    </div>
+                </div>
+
+                <div id="details-container" class="bg-white p-6 md:p-8 rounded-2xl shadow-lg min-h-[20rem] transition-opacity duration-500">
+                </div>
+            </section>
+
+            <section id="advantages" class="mb-16 md:mb-24">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold text-[#E3D263] mb-2">Beneficios Clave de Nuestro Servicio de Arriendo</h2>
+                     <p class="text-white max-w-3xl mx-auto">Garantizamos la **seguridad** de su inversión, minimizando riesgos y brindándole una gestión **transparente y sin preocupaciones**.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                        <div class="text-3xl text-amber-500 mb-3">&#128269;</div>
+                        <h3 class="text-xl font-bold mb-2">Arrendatarios Cualificados</h3>
+                        <p class="text-stone-600">Encontramos a los arrendatarios más solventes y responsables para su propiedad, reduciendo sus riesgos y asegurando la tranquilidad.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                        <div class="text-3xl text-amber-500 mb-3">&#128176;</div>
+                        <h3 class="text-xl font-bold mb-2">Minimización de Riesgos</h3>
+                        <p class="text-stone-600">Minimizamos el riesgo de vacancia e incobrabilidad con una gestión profesional integral.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                         <div class="text-3xl text-amber-500 mb-3">&#128220;</div>
+                        <h3 class="text-xl font-bold mb-2">Gestión Integral Sin Estrés</h3>
+                        <p class="text-stone-600">Desde la promoción inicial hasta la administración completa, nos encargamos de cada detalle para que usted disfrute de su tiempo sin preocupaciones.</p>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+
+        <footer class="text-center mt-16 md:mt-24 pt-8 border-t border-stone-200">
+            <p class="text-white">&copy; 2024 VIVABIEN PROPIEDADES. Todos los derechos reservados.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const serviceData = {
+                'step-1': {
+                    title: '1. Asesoría Inicial al Cliente',
+                    content: `
+                        <ul class="list-disc list-inside space-y-3 text-stone-700">
+                            <li><strong>Entendiendo su Inmueble:</strong> Realizamos una visita exhaustiva para levantar información relevante y comprender a fondo las características y el potencial de su propiedad.</li>
+                            <li><strong>Material Visual de Impacto:</strong> Creamos fotografías y videos profesionales de alta calidad para destacar los atractivos únicos de su inmueble y atraer instantáneamente a los mejores arrendatarios.</li>
+                            <li><strong>Valor Justo y Rentable:</strong> Le aconsejamos sobre el precio de arriendo óptimo, basándonos en un análisis detallado del mercado actual, para asegurar la máxima rentabilidad y rapidez en el arriendo.</li>
+                        </ul>`
+                },
+                'step-2': {
+                    title: '2. Estrategia de Promoción y Publicidad',
+                    content: `
+                        <ul class="list-disc list-inside space-y-3 text-stone-700">
+                            <li><strong>Visibilidad Máxima:</strong> Difundimos su propiedad en los principales portales inmobiliarios de Chile, nuestras redes sociales activas y medios asociados, garantizando que su inmueble sea visto por miles de potenciales arrendatarios.</li>
+                            <li><strong>Conexión Directa:</strong> Utilizamos nuestra extensa base de datos de clientes cualificados para conectar su inmueble con arrendatarios ideales que buscan propiedades como la suya.</li>
+                        </ul>`
+                },
+                'step-3': {
+                    title: '3. Gestión Profesional de Visitas',
+                    content: `
+                        <ul class="list-disc list-inside space-y-3 text-stone-700">
+                            <li><strong>Experiencia Impecable:</strong> Coordinamos y realizamos todas las visitas al inmueble de forma profesional, presentando su propiedad de la mejor manera y respondiendo a todas las dudas de los interesados.</li>
+                            <li><strong>Preselección Inteligente:</strong> Filtramos y preseleccionamos a los potenciales arrendatarios según los criterios específicos que usted defina, ahorrándole tiempo valioso y asegurando visitas de calidad.</li>
+                        </ul>`
+                },
+                'step-4': {
+                    title: '4. Evaluación y Selección Rigurosa de Arrendatarios',
+                    content: `
+                        <ul class="list-disc list-inside space-y-3 text-stone-700">
+                            <li><strong>Seguridad Financiera:</strong> Realizamos una exhaustiva revisión de antecedentes financieros y comerciales de todos los candidatos para asegurar su solvencia y responsabilidad.</li>
+                            <li><strong>Verificación de Confianza:</strong> Llevamos a cabo una verificación laboral, de antecedentes personales y de referencias detallada para garantizar la total confiabilidad y tranquilidad en la elección del arrendatario.</li>
+                            <li><strong>Análisis de Solvencia:</strong> Evaluamos meticulosamente la capacidad económica del candidato para garantizar el cumplimiento puntual del pago del arriendo.</li>
+                        </ul>`
+                },
+                'step-5': {
+                    title: '5. Elaboración y Firma Segura del Contrato',
+                    content: `
+                        <ul class="list-disc list-inside space-y-3 text-stone-700">
+                            <li><strong>Contrato a su Medida y Seguro:</strong> Preparamos un contrato de arriendo que cumple con toda la legislación vigente, diseñado para proteger sus intereses y garantizar su tranquilidad.</li>
+                            <li><strong>Firma Simplificada:</strong> Nos encargamos de coordinar el proceso de firma entre todas las partes involucradas, facilitando un trámite ágil y sin complicaciones.</li>
+                        </ul>`
+                },
+                'step-6': {
+                    title: '6. Entrega del Inmueble con Transparencia',
+                    content: `
+                        <ul class="list-disc list-inside space-y-3 text-stone-700">
+                            <li><strong>Registro Detallado:</strong> Realizamos un inventario de entrega minucioso (acta con registro de estado del inmueble) con documentación fotográfica o de video, brindándole total transparencia y respaldo.</li>
+                            <li><strong>Coordinación Eficiente:</strong> Gestionamos la entrega de las llaves al nuevo arrendatario de forma organizada y segura, asegurando una transición fluida.</li>
+                        </ul>`
+                },
+                'step-7': {
+                    title: '7. Servicio de Administración (Opcional) 8% + IVA',
+                    content: `
+                        <ul class="list-disc list-inside space-y-3 text-stone-700">
+                            <li><strong>Cobro Mensual Sin Preocupaciones:</strong> Nos encargamos del cobro puntual del canon de arriendo, garantizando su flujo de ingresos sin estrés.</li>
+                            <li><strong>Gestión Documental Completa:</strong> Emitimos las boletas o facturas correspondientes, manteniendo todo en orden y al día.</li>
+                            <li><strong>Transferencia Oportuna:</strong> Aseguramos la transferencia rápida y segura del arriendo a su cuenta, para que disfrute de sus ganancias sin demoras.</li>
+                            <li><strong>Mantenimiento y Cuidado:</strong> Nos encargamos de coordinar reparaciones y mantenciones menores necesarias en la propiedad, protegiendo su valor a largo plazo.</li>
+                            <li><strong>Protección de su Inversión:</strong> Realizamos inspecciones regulares para verificar el buen estado del inmueble, asegurando su conservación y valor.</li>
+                            <li><strong>Transparencia Financiera:</strong> Le proporcionamos informes detallados y claros del estado de cuentas de su propiedad, para que siempre esté informado.</li>
+                        </ul>
+                        <h4 class="text-xl font-bold text-[#225479] mt-6 mb-3">Término del Contrato (Incluido en Administración): Su Paz Mental hasta el Final</h4>
+                        <ul class="list-disc list-inside space-y-3 text-stone-700">
+                            <li><strong>Cierre Ordenado y Justo:</strong> Gestionamos la recepción del inmueble al finalizar el contrato, verificando el cumplimiento de las condiciones y asegurando que todas las cuentas estén al día, sin sorpresas.</li>
+                            <li><strong>Revisión Detallada y Devolución Segura:</strong> Realizamos una inspección final minuciosa del estado del inmueble y procedemos con la liquidación y devolución de las garantías correspondientes de forma transparente y justa.</li>
+                        </ul>`
+                }
+            };
+
+            const steps = document.querySelectorAll('.process-step');
+            const detailsContainer = document.getElementById('details-container');
+
+            function updateDetails(stepId) {
+                const data = serviceData[stepId];
+                detailsContainer.style.opacity = 0;
+                
+                setTimeout(() => {
+                    detailsContainer.innerHTML = `
+                        <h3 class="text-2xl font-bold text-[#225479] mb-4">${data.title}</h3>
+                        ${data.content}
+                    `;
+                    detailsContainer.style.opacity = 1;
+                }, 300);
+
+                steps.forEach(s => {
+                    s.classList.remove('process-step-active');
+                });
+                document.getElementById(stepId).classList.add('process-step-active');
+            }
+            
+            steps.forEach(step => {
+                step.addEventListener('click', () => {
+                    updateDetails(step.id);
+                });
+            });
+
+            updateDetails('step-1');
+        });
+    </script>
+</body>
+</html>
